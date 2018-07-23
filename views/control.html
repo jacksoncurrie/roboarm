@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<!--
+Author      :  Jackson Currie
+Date        :  2018-07-09
+Description :  Webpage to control Roboarm
+-->
+
+<html>
+<head>
+    <!-- Metadata -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="/styles/controls.css">
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="/socket.io/socket.io.js" defer></script>
+    <script type="text/javascript" src="/scripts/controls.js" defer></script>
+
+    <!-- Title -->
+    <title>Roboarm</title>
+    <link rel="shortcut icon" type="image/png" href="/images/16x16.png">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>ROBOARM</h1>
+
+        <!-- Navigation -->
+        <nav>
+            <a href="/">Home</a>
+            <a href="/control" class="active">Control</a>
+            <a href="/about">About</a>
+        </nav>
+    </header>
+
+    <!-- Roboarm controls-->
+    <main>
+        <!-- Rotate controls -->
+        <div>
+            <h2>Rotate</h1>
+            <button type="button" id="left">LEFT</button>
+            <input type="range" min="700" max="1800" step="20" id="sliderRotate">
+            <button type="button" id="right">RIGHT</button>
+            <p id="valueRotate"></p>
+        </div>
+
+        <!-- Forward/Back controls -->
+        <div>
+            <h2>Forward/Backwards</h2>
+            <button type="button" id="back">BACK</button>
+            <input type="range" min="800" max="1600" step="20" id="sliderForward">
+            <button type="button" id="forward">FORWARD</button>
+            <p id="valueForward"></p>
+        </div>
+
+        <!-- Up/Down controls -->
+        <div>
+            <h2>Up/Down</h2>
+            <button type="button" id="down">DOWN</button>
+            <input type="range" min="1800" max="2200" step="20" id="sliderUp">
+            <button type="button" id="up">UP</button>
+            <p id="valueUp"></p>
+        </div>
+    </main>
+
+    <!-- Copywrite information -->
+    <footer>
+        <p>&copy; Jackson Currie, 2018</p>
+    </footer>
+</body>
+</html>

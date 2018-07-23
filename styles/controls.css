@@ -1,0 +1,22 @@
+/*
+ * Author      :  Jackson Currie
+ * Date        :  2018-07-09
+ * Description :  Stylesheet for Roboarm controls
+ */
+
+div {
+    margin: 20px 0;
+}
+input {
+    width: 70%;
+    margin-bottom: -5px;
+}
+
+button {
+    margin: 0 10px;
+    width: 100px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid black;
+}
+

@@ -1,0 +1,26 @@
+{
+  "name": "roboarm",
+  "version": "1.0.0",
+  "description": "Controlling a robot with a Raspberry Pi",
+  "main": "index.js",
+  "scripts": {
+    "start": "sudo node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://jacksoncurrie@bitbucket.org/jacksoncurrie/roboarm.git"
+  },
+  "keywords": [
+    "robot",
+    "rapsberry",
+    "pi"
+  ],
+  "author": "Jackson Currie",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/jacksoncurrie/roboarm#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "pigpio": "^1.1.1",
+    "socket.io": "^2.1.1"
+  }
+}
