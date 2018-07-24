@@ -26,6 +26,10 @@ rot.servoWrite(forwValue);
 up.servoWrite(upValue);
 rot.servoWrite(rotValue);
 
+// Views
+app.set('view engine', 'ejs');
+app.set('views', 'views');
+
 // Static files
 app.use('/styles', express.static('styles'));
 app.use('/scripts', express.static('scripts'));

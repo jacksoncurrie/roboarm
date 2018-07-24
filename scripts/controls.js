@@ -45,72 +45,63 @@ sliderUp.addEventListener("input", () =>
 
 // When left button pressed
 left.addEventListener("click", () => {
-    // Move slider
+    // Change slider
     sliderRotate.value -= 20;
-    // Send to other users
     socket.emit("rotate", sliderRotate.value);
 });
 
 // When right button pressed
 right.addEventListener("click", () => {
-    // Move slider
+    // Change slider
     sliderRotate.value = +sliderRotate.value + 20;
-    // Send to other users
     socket.emit("rotate", sliderRotate.value);
 });
 
 // When back button pressed
 back.addEventListener("click", () => {
-    // Send to other users
+    // Change slider
     sliderForward.value -= 20;
-    // Send to other users
     socket.emit("forward", sliderForward.value);
 });
 
 // When forward button pressed
 forward.addEventListener("click", () => {
-    // Send to other users
+    // Change slider
     sliderForward.value = +sliderForward.value + 20;
-    // Send to other users
     socket.emit("forward", sliderForward.value);
 });
 
 // When down button pressed
 down.addEventListener("click", () => {
-    // Send to other users
+    // Change slider
     sliderUp.value -= 20;
-    // Send to other users
     socket.emit("up", sliderUp.value);
 });
 
 // When up button pressed
 up.addEventListener("click", () => {
-    // Send to other users
+    // Change Slider
     sliderUp.value = +sliderUp.value + 20;
-    // Send to other users
     socket.emit("up", sliderUp.value);
 });
 
 // Recieved new rotate value
 socket.on("valueRotate", (data) => {
-    // Send to other users
+    // Change slider
     sliderRotate.value = data;
-    // Send to other users
     valueRotate.innerHTML = 'Value: ' + data;
 });
   
 // Recieved new forward value
 socket.on("valueForward", (data) => {
-    // Send to other users
+    // Change slider
     sliderForward.value = data;
-    // Send to other users
     valueForward.innerHTML = 'Value: ' + data;
 });
   
 // Recieved new up value
 socket.on("valueUp", (data) => {
-    // Send to other users
+    // Change slider
     sliderUp.value = data;
-    // Send to other users
     valueUp.innerHTML = 'Value: ' + data;
 });
