@@ -36,9 +36,11 @@ app.use('/scripts', express.static('scripts'));
 app.use('/images', express.static('images'));
 
 // Home page
-app.get('/', (req, res) => 
-  res.sendFile(path.join(__dirname, 'views/index.html'))
-);
+app.get('/', (req, res) => {
+  res.render('index', {
+    pageTitle: 'Home'
+  });
+});
 
 // Control page
 app.get('/control', (req, res) => 
