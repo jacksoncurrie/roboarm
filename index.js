@@ -16,9 +16,9 @@ const forw = new Gpio(15, {mode: Gpio.OUTPUT});
 const up = new Gpio(27, {mode: Gpio.OUTPUT});
 
 // Start with roboarm in centre
-var rotValue = 1730;
-var forwValue = 1865;
-var upValue = 1730;
+var rotValue = 1460;
+var forwValue = 2070;
+var upValue = 1440;
 
 // Move servos to centre
 rot.servoWrite(rotValue);
