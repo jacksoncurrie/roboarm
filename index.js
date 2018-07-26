@@ -7,7 +7,6 @@
 // Librarys
 const express = require('express');
 const app = express();
-const path = require('path');
 const io = require('socket.io')();
 const Gpio = require('pigpio').Gpio;
 
@@ -43,14 +42,18 @@ app.get('/', (req, res) => {
 });
 
 // Control page
-app.get('/control', (req, res) => 
-  res.sendFile(path.join(__dirname, 'views/control.html'))
-);
+app.get('/control', (req, res) => {
+  res.render('control', {
+    pageTitle: 'Control'
+  });
+});
 
 // About page
-app.get('/about', (req, res) => 
-  res.sendFile(path.join(__dirname, 'views/about.html'))
-);
+app.get('/about', (req, res) => {
+  res.render('about', {
+    pageTitle: 'About'
+  });
+});
 
 // Start server on port 8080
 var server = app.listen(8080, () =>

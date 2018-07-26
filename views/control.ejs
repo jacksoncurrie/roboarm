@@ -8,34 +8,12 @@ Description :  Webpage to control Roboarm
 
 <html>
 <head>
-    <!-- Metadata -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Stylesheet -->
-    <link rel="stylesheet" type="text/css" href="/styles/main.css">
-    <link rel="stylesheet" type="text/css" href="/styles/controls.css">
-
-    <!-- Scripts -->
-    <script type="text/javascript" src="/socket.io/socket.io.js" defer></script>
-    <script type="text/javascript" src="/scripts/controls.js" defer></script>
-
-    <!-- Title -->
-    <title>Roboarm</title>
-    <link rel="shortcut icon" type="image/png" href="/images/16x16.png">
+    <!-- Common Head -->
+    <% include partials/head.ejs %>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <h1>ROBOARM</h1>
-
-        <!-- Navigation -->
-        <nav>
-            <a href="/">Home</a>
-            <a href="/control" class="active">Control</a>
-            <a href="/about">About</a>
-        </nav>
-    </header>
+    <!-- Common Header -->
+    <% include partials/header.ejs %>
 
     <!-- Roboarm controls-->
     <main>
@@ -67,9 +45,7 @@ Description :  Webpage to control Roboarm
         </div>
     </main>
 
-    <!-- Copywrite information -->
-    <footer>
-        <p>&copy; Jackson Currie, 2018</p>
-    </footer>
+    <!-- Common Footer -->
+    <% include partials/footer.ejs %>
 </body>
 </html>

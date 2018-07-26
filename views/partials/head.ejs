@@ -1,0 +1,27 @@
+<!-- Common Metadata -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Jackson Currie">
+
+<!-- Common Stylesheet -->
+<link rel="stylesheet" href="/styles/main.css">
+
+<!-- Common Title -->
+<title>Roboarm</title>
+
+<!-- Home page extras -->
+<% if(pageTitle == 'Home') { %>
+    <!-- Metadata -->
+    <meta name="description" content="Website to control Roboarm">
+    <meta name="keywords" content="Roboarm, Robot, Raspberry Pi">
+<% } %>
+
+<!-- Control page extras -->
+<% if(pageTitle == 'Control') { %>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="/styles/controls.css">
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="/socket.io/socket.io.js" defer></script>
+    <script type="text/javascript" src="/scripts/controls.js" defer></script>
+<% } %>
