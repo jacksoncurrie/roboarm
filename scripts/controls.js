@@ -60,14 +60,14 @@ right.addEventListener("click", () => {
 // When back button pressed
 back.addEventListener("click", () => {
     // Change slider
-    sliderForward.value -= 20;
+    sliderForward.value -= 10;
     socket.emit("forward", sliderForward.value);
 });
 
 // When forward button pressed
 forward.addEventListener("click", () => {
     // Change slider
-    sliderForward.value = +sliderForward.value + 20;
+    sliderForward.value = +sliderForward.value + 10;
     socket.emit("forward", sliderForward.value);
 });
 
