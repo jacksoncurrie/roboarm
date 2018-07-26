@@ -19,6 +19,7 @@
   "license": "ISC",
   "homepage": "https://bitbucket.org/jacksoncurrie/roboarm#readme",
   "dependencies": {
+    "ejs": "^2.6.1",
     "express": "^4.16.3",
     "pigpio": "^1.1.1",
     "socket.io": "^2.1.1"
