@@ -14,16 +14,19 @@ const Gpio = require('pigpio').Gpio;
 const rot = new Gpio(3, {mode: Gpio.OUTPUT});
 const forw = new Gpio(15, {mode: Gpio.OUTPUT});
 const up = new Gpio(27, {mode: Gpio.OUTPUT});
+const ins = new Gpio(24, {mode: Gpio.OUTPUT});
 
 // Start with roboarm in centre
 var rotValue = 1460;
 var forwValue = 1260;
 var upValue = 1500;
+var inValue = 1500;
 
 // Move servos to centre
 rot.servoWrite(rotValue);
 forw.servoWrite(forwValue);
 up.servoWrite(upValue);
+ins.servoWrite(inValue);
 
 // Views
 app.set('view engine', 'ejs');
@@ -69,6 +72,7 @@ io.sockets.on('connection', (socket) => {
   socket.emit('valueRotate', rotValue);
   socket.emit('valueForward', forwValue);
   socket.emit('valueUp', upValue);
+  socket.emit('valueIn', inValue);
 
   // When rotate position is moved
   socket.on('rotate', (data) => {
@@ -92,5 +96,13 @@ io.sockets.on('connection', (socket) => {
     upValue = data;
     up.servoWrite(upValue);
     io.emit('valueUp', upValue);
+  });
+
+  // When up position is moved
+  socket.on('in', (data) => {
+    // Set the new value
+    inValue = data;
+    ins.servoWrite(inValue);
+    io.emit('valueIn', inValue);
   });
 });

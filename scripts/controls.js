@@ -11,6 +11,7 @@ var socket = io();
 var sliderRotate = document.getElementById("sliderRotate");
 var sliderForward = document.getElementById("sliderForward");
 var sliderUp = document.getElementById("sliderUp");
+var sliderIn = document.getElementById("sliderIn");
 
 // Buttons
 var left = document.getElementById("left");
@@ -19,11 +20,14 @@ var forward = document.getElementById("forward");
 var back  = document.getElementById("back");
 var up = document.getElementById("up");
 var down = document.getElementById("down");
+var ins = document.getElementById("in");
+var out = document.getElementById("out");
 
 // Value areas
 var valueRotate = document.getElementById("valueRotate");
 var valueForward = document.getElementById("valueForward");
 var valueUp = document.getElementById("valueUp");
+var valueIn = document.getElementById("valueIn");
 
 // When rotate slider is changed
 sliderRotate.addEventListener("input", () => 
@@ -41,6 +45,12 @@ sliderForward.addEventListener("input", () =>
 sliderUp.addEventListener("input", () => 
     // Send to all users
     socket.emit("up", sliderUp.value)
+);
+
+// When in slider is changed
+sliderIn.addEventListener("input", () => 
+    // Send to all users
+    socket.emit("in", sliderIn.value)
 );
 
 // When left button pressed
@@ -85,6 +95,20 @@ up.addEventListener("click", () => {
     socket.emit("up", sliderUp.value);
 });
 
+// When down button pressed
+out.addEventListener("click", () => {
+    // Change slider
+    sliderIn.value -= 20;
+    socket.emit("in", sliderIn.value);
+});
+
+// When up button pressed
+ins.addEventListener("click", () => {
+    // Change Slider
+    sliderIn.value = +sliderIn.value + 20;
+    socket.emit("in", sliderIn.value);
+});
+
 // Recieved new rotate value
 socket.on("valueRotate", (data) => {
     // Change slider
@@ -104,4 +128,11 @@ socket.on("valueUp", (data) => {
     // Change slider
     sliderUp.value = data;
     valueUp.innerHTML = 'Value: ' + data;
+});
+
+// Recieved new up value
+socket.on("valueIn", (data) => {
+    // Change slider
+    sliderIn.value = data;
+    valueIn.innerHTML = 'Value: ' + data;
 });
