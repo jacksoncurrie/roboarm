@@ -4,7 +4,7 @@
   "description": "Controlling a robot with a Raspberry Pi",
   "main": "index.js",
   "scripts": {
-    "start": "sudo node ."
+    "start": "sudo node app.js"
   },
   "repository": {
     "type": "git",
@@ -12,6 +12,7 @@
   },
   "keywords": [
     "robot",
+    "roboarm",
     "rapsberry",
     "pi"
   ],
@@ -21,6 +22,8 @@
   "dependencies": {
     "ejs": "^2.6.1",
     "express": "^4.16.3",
+    "forever": "^0.15.3",
+    "forever-service": "^0.5.11",
     "pigpio": "^1.1.1",
     "socket.io": "^2.1.1"
   }

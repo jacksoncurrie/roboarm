@@ -1,0 +1,11 @@
+clear
+echo "Starting install"
+cd /home/pi/PIGPIO
+make
+make install
+cd ..
+npm i
+forever-service install
+echo "sudo service myService start" > /etc/rc.local
+echo "exit 0" >> /etc/rc.local
+reboot
