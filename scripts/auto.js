@@ -61,5 +61,7 @@ var automate = (position) => {
     for(var i = 1100; i <= 1700; i++ ) {
         socket.emit("in", i);
     }
-    
 }
+
+automate('right');
+automate('left');
