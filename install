@@ -1,3 +1,6 @@
+#!/bin/bash
+# All commands for installing Roboarm
+
 clear
 
 echo "==============================="
@@ -35,7 +38,9 @@ echo "==============================="
 echo "   Adding service to boot" 
 echo "==============================="
 
-sudo echo "sudo service myService start" > /etc/rc.local
+sudo echo "#!/bin/sh" > /etc/rc.local
+sudo echo "# This starts on boot" >> /etc/rc.local
+sudo echo "sudo service myService start" >> /etc/rc.local
 sudo echo "exit 0" >> /etc/rc.local
 
 echo "==============================="
