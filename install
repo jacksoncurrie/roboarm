@@ -1,34 +1,49 @@
 clear
+
 echo "==============================="
 echo "Starting install, please wait..."
 echo "==============================="
-cd /home/pi/roboarm/PIGPIO
+
+cd PIGPIO
+
 echo "==============================="
 echo "        Making PIGPIO"
 echo "==============================="
+
 make
+
 echo "==============================="
 echo "     Installing PIGPIO"
 echo "==============================="
+
 sudo make install
 cd ..
+
 echo "==============================="
 echo " Installing node dependencies"
 echo "==============================="
+
 sudo npm i
+
 echo "==============================="
 echo "  Installing forever service"
 echo "==============================="
+
 forever-service install myService
+
 echo "==============================="
 echo "   Adding service to boot" 
 echo "==============================="
-echo "sudo service myService start" > /etc/rc.local
-echo "exit 0" >> /etc/rc.local
+
+sudo echo "sudo service myService start" > /etc/rc.local
+sudo echo "exit 0" >> /etc/rc.local
+
 echo "==============================="
 echo "      Starting service"
 echo "==============================="
-service myService start
+
+sudo service myService start
+
 echo "==============================="
 echo "      Install Complete"
 echo "  You can reboot your device"
