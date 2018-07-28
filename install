@@ -2,10 +2,10 @@ clear
 echo "Starting install, please wait..."
 cd /home/pi/roboarm/PIGPIO
 make
-sudo make install
+make install
 cd ..
-sudo npm i
+npm i
 forever-service install
-sudo echo "sudo service myService start" > /etc/rc.local
-sudo echo "exit 0" >> /etc/rc.local
-reboot
+echo "sudo service myService start" > /etc/rc.local
+echo "exit 0" >> /etc/rc.local
+service myService start
