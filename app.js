@@ -17,10 +17,10 @@ const up = new Gpio(27, {mode: Gpio.OUTPUT});
 const ins = new Gpio(24, {mode: Gpio.OUTPUT});
 
 // Start with roboarm in centre
-var rotValue = 1460;
-var forwValue = 1260;
+var rotValue = 1450;
+var forwValue = 1250;
 var upValue = 1500;
-var inValue = 1360;
+var inValue = 1350;
 
 // Move servos to centre
 rot.servoWrite(rotValue);
