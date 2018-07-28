@@ -13,7 +13,7 @@ var moveServo = async (servo, position, final) => {
     if(position != final) {
 
         // Which way to move
-        position += (final < position) ? 1 : -1;
+        position += (position < final) ? 1 : -1;
 
         // Send to servo
         socket.emit(servo, position);
