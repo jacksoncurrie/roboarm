@@ -16,11 +16,15 @@ var automate = () => {
         })(i);
     }
 
-    /*for(var i = 1250; i <= 1500; i++ ) {
-        socket.emit("forward", i);
+    for(var i = 1250; i <= 1500; i++ ) {
+        (function (i) {
+            setTimeout(function () {
+                socket.emit("forward", i);
+            }, 100);
+        })(i);
     }
 
-    for(var i = 1500; i >= 900; i-- ) {
+    /*for(var i = 1500; i >= 900; i-- ) {
         socket.emit("up", i);
     }
 
