@@ -17,7 +17,7 @@ var pickup = () => {
         socket.emit("up", i);
     }
 
-    for(var i = 1350; i >= 1100; i-- ) {
+    for(var i = 1700; i >= 1100; i-- ) {
         socket.emit("in", i);
     }
 
@@ -58,7 +58,7 @@ var automate = (position) => {
 
     }
 
-    for(var i = 1100; i <= 1350; i++ ) {
+    for(var i = 1100; i <= 1700; i++ ) {
         socket.emit("in", i);
     }
     
