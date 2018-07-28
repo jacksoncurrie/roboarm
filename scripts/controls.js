@@ -23,12 +23,6 @@ var down = document.getElementById("down");
 var ins = document.getElementById("in");
 var out = document.getElementById("out");
 
-// Value areas
-var valueRotate = document.getElementById("valueRotate");
-var valueForward = document.getElementById("valueForward");
-var valueUp = document.getElementById("valueUp");
-var valueIn = document.getElementById("valueIn");
-
 // When rotate slider is changed
 sliderRotate.addEventListener("input", () => 
     // Send to all users
@@ -113,26 +107,22 @@ ins.addEventListener("click", () => {
 socket.on("valueRotate", (data) => {
     // Change slider
     sliderRotate.value = data;
-    valueRotate.innerHTML = 'Value: ' + data;
 });
   
 // Recieved new forward value
 socket.on("valueForward", (data) => {
     // Change slider
     sliderForward.value = data;
-    valueForward.innerHTML = 'Value: ' + data;
 });
   
 // Recieved new up value
 socket.on("valueUp", (data) => {
     // Change slider
     sliderUp.value = data;
-    valueUp.innerHTML = 'Value: ' + data;
 });
 
 // Recieved new up value
 socket.on("valueIn", (data) => {
     // Change slider
     sliderIn.value = data;
-    valueIn.innerHTML = 'Value: ' + data;
 });
