@@ -9,9 +9,11 @@ var socket = io();
 
 var automate = () => {
     for(var i = 1450; i <= 2360; i++ ) {
-        setTimeout(() => {
-            socket.emit("rotate", i);
-        }, 100);
+        (function (i) {
+            setTimeout(function () {
+                socket.emit("rotate", i);
+            }, 100);
+        })(i);
     }
 
     for(var i = 1250; i <= 1500; i++ ) {
