@@ -12,7 +12,7 @@ var automate = () => {
         (function (i) {
             setTimeout(function () {
                 socket.emit("rotate", i);
-            }, 100);
+            }, 300);
         })(i);
     }
 
@@ -20,31 +20,56 @@ var automate = () => {
         (function (i) {
             setTimeout(function () {
                 socket.emit("forward", i);
-            }, 100);
+            }, 300);
         })(i);
     }
 
-    /*for(var i = 1500; i >= 900; i-- ) {
-        socket.emit("up", i);
+    for(var i = 1500; i >= 900; i-- ) {
+        (function (i) {
+            setTimeout(function () {
+                socket.emit("up", i);
+            }, 300);
+        })(i);
     }
 
     for(var i = 1350; i >= 1100; i-- ) {
-        socket.emit("in", i);
+        (function (i) {
+            setTimeout(function () {
+                socket.emit("in", i);
+            }, 300);
+        })(i);
     }
 
     for(var i = 1100; i <= 1350; i++ ) {
-        socket.emit("in", i);
+        (function (i) {
+            setTimeout(function () {
+                socket.emit("in", i);
+            }, 300);
+        })(i);
     }
 
     for(var i = 900; i <= 1500; i++ ) {
-        socket.emit("up", i);
+        (function (i) {
+            setTimeout(function () {
+                socket.emit("up", i);
+            }, 300);
+        })(i);
     }
 
     for(var i = 1500; i >= 1250; i-- ) {
-        socket.emit("forward", i);
+        (function (i) {
+            setTimeout(function () {
+                socket.emit("forward", i);
+            }, 300);
+        })(i);
     }
 
     for(var i = 2360; i >= 1450; i-- ) {
-        socket.emit("rotate", i);
-    }*/
+        
+        (function (i) {
+            setTimeout(function () {
+                socket.emit("rotate", i);
+            }, 300);
+        })(i);
+    }
 }
