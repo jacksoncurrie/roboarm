@@ -1,11 +1,50 @@
 clear
-echo "Starting install"
-cd /home/pi/PIGPIO
+
+echo "==============================="
+echo "Starting install, please wait..."
+echo "==============================="
+
+cd PIGPIO
+
+echo "==============================="
+echo "        Making PIGPIO"
+echo "==============================="
+
 make
-make install
+
+echo "==============================="
+echo "     Installing PIGPIO"
+echo "==============================="
+
+sudo make install
 cd ..
-npm i
-forever-service install
-echo "sudo service myService start" > /etc/rc.local
-echo "exit 0" >> /etc/rc.local
-reboot
+
+echo "==============================="
+echo " Installing node dependencies"
+echo "==============================="
+
+sudo npm i
+
+echo "==============================="
+echo "  Installing forever service"
+echo "==============================="
+
+forever-service install myService
+
+echo "==============================="
+echo "   Adding service to boot" 
+echo "==============================="
+
+sudo echo "sudo service myService start" > /etc/rc.local
+sudo echo "exit 0" >> /etc/rc.local
+
+echo "==============================="
+echo "      Starting service"
+echo "==============================="
+
+sudo service myService start
+
+echo "==============================="
+echo "      Install Complete"
+echo "  You can reboot your device"
+echo "==============================="
