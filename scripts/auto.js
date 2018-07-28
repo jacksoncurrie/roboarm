@@ -24,7 +24,7 @@ var automate = () => {
         socket.emit("in", i);
     }
 
-    for(var i = 1100; i <= 1350; i-- ) {
+    /*for(var i = 1100; i <= 1350; i-- ) {
         socket.emit("in", i);
     }
 
@@ -38,5 +38,5 @@ var automate = () => {
 
     for(var i = 2360; i <= 1450; i++ ) {
         socket.emit("rotate", i);
-    }
+    }*/
 }
