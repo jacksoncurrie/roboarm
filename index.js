@@ -20,7 +20,7 @@ const ins = new Gpio(24, {mode: Gpio.OUTPUT});
 var rotValue = 1460;
 var forwValue = 1260;
 var upValue = 1500;
-var inValue = 1500;
+var inValue = 1360;
 
 // Move servos to centre
 rot.servoWrite(rotValue);
