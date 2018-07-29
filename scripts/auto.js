@@ -7,74 +7,52 @@
 // Socket
 var socket = io();
 
-// Move arm to pick up
-var pickup = () => {
+var moveServo = async (servo, position, final) => {
 
-    // Move forward
-    for(var i = 1250; i <= 1500; i++ ) {
-        socket.emit("forward", i);
-    }
+    // While not complete
+    if(position != final) {
 
-    // Move down
-    for(var i = 1500; i >= 900; i-- ) {
-        socket.emit("up", i);
-    }
+        // Which way to move
+        position += (final < position) ? 1 : -1;
 
-    // Grab
-    for(var i = 1700; i >= 1100; i-- ) {
-        socket.emit("in", i);
-    }
+        // Send to servo
+        socket.emit(servo, position);
 
-
-    // Move up
-    for(var i = 900; i <= 1500; i++ ) {
-        socket.emit("up", i);
-    }
-
-    // Move back
-    for(var i = 1500; i >= 1250; i-- ) {
-        socket.emit("forward", i);
+        // Run function again
+        setTimeout(() =>
+            moveServo(servo, position, final),
+            10
+        );
     }
 }
 
 // Start automation of arm
 var automate = (position) => {
 
-    // If automated right
-    if(position == "right") {
+    // Which way to rotate
+    rotateTo = (position == "right") ? 2360 : 540;
 
-        // Rotate right
-        for(var i = 1450; i <= 2360; i++ ) {
-            socket.emit("rotate", i);
-        }
-
-        // Move arm
-        pickup()
-
-        // Rotate back
-        for(var i = 2360; i >= 1450; i-- ) {
-            socket.emit("rotate", i);
-        }
-
-    // If automated left
-    } else if(position == "left") {
-
-        // Rotate left
-        for(var i = 1450; i >= 540; i-- ) {
-            socket.emit("rotate", i);
-        }
-
-        // Move arm
-        pickup()
-
-        // Rotate back
-        for(var i = 540; i <= 1450; i++ ) {
-            socket.emit("rotate", i);
-        }
-    }
-
-    // Drop object
-    for(var i = 1100; i <= 1700; i++ ) {
-        socket.emit("in", i);
-    }
+    // Moves the servo
+    moveServo("rotate", 1450, rotateTo)
+        .then(() =>
+            moveServo("forward", 1250, 1500)
+        )
+        .then(() =>
+            moveServo("up", 1500, 900)
+        )
+        .then(() =>
+            moveServo("in", 1700, 1100)
+        )
+        .then(() =>
+            moveServo("up", 900, 1500)
+        )
+        .then(() =>
+            moveServo("forward", 1500, 1250)
+        )
+        .then(() =>
+            moveServo("rotate", rotateTo, 1450)
+        )
+        .then(() =>
+            moveServo("in", 1100, 1700)
+        )
 }
