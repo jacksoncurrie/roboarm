@@ -34,7 +34,7 @@ var automate = (position) => {
 
     // Moves the servo
     moveServo("rotate", 1450, rotateTo)
-        /*.then(() =>
+        .then(() =>
             moveServo("forward", 1250, 1500)
         )
         .then(() =>
@@ -54,5 +54,5 @@ var automate = (position) => {
         )
         .then(() =>
             moveServo("in", 1100, 1700)
-        )*/
+        )
 }
