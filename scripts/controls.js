@@ -50,56 +50,56 @@ sliderIn.addEventListener("input", () =>
 // When left button pressed
 left.addEventListener("click", () => {
     // Change slider
-    sliderRotate.value -= 20;
+    sliderRotate.value -= 10;
     socket.emit("rotate", sliderRotate.value);
 });
 
 // When right button pressed
 right.addEventListener("click", () => {
     // Change slider
-    sliderRotate.value = +sliderRotate.value + 20;
+    sliderRotate.value = +sliderRotate.value + 10;
     socket.emit("rotate", sliderRotate.value);
 });
 
 // When back button pressed
 back.addEventListener("click", () => {
     // Change slider
-    sliderForward.value -= 20;
+    sliderForward.value -= 10;
     socket.emit("forward", sliderForward.value);
 });
 
 // When forward button pressed
 forward.addEventListener("click", () => {
     // Change slider
-    sliderForward.value = +sliderForward.value + 20;
+    sliderForward.value = +sliderForward.value + 10;
     socket.emit("forward", sliderForward.value);
 });
 
 // When down button pressed
 down.addEventListener("click", () => {
     // Change slider
-    sliderUp.value -= 20;
+    sliderUp.value -= 10;
     socket.emit("up", sliderUp.value);
 });
 
 // When up button pressed
 up.addEventListener("click", () => {
     // Change Slider
-    sliderUp.value = +sliderUp.value + 20;
+    sliderUp.value = +sliderUp.value + 10;
     socket.emit("up", sliderUp.value);
 });
 
 // When down button pressed
 out.addEventListener("click", () => {
     // Change slider
-    sliderIn.value -= 20;
+    sliderIn.value -= 10;
     socket.emit("in", sliderIn.value);
 });
 
 // When up button pressed
 ins.addEventListener("click", () => {
     // Change Slider
-    sliderIn.value = +sliderIn.value + 20;
+    sliderIn.value = +sliderIn.value + 10;
     socket.emit("in", sliderIn.value);
 });
 
