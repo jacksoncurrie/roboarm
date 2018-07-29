@@ -13,7 +13,7 @@ var moveServo = async (servo, position, final) => {
     if(position != final) {
 
         // Which way to move
-        position += (final < position) ? 1 : -1;
+        position += (position < final) ? 1 : -1;
 
         // Send to servo
         socket.emit(servo, position);
@@ -34,7 +34,7 @@ var automate = (position) => {
 
     // Moves the servo
     moveServo("rotate", 1450, rotateTo)
-        .then(() =>
+        /*.then(() =>
             moveServo("forward", 1250, 1500)
         )
         .then(() =>
@@ -54,5 +54,5 @@ var automate = (position) => {
         )
         .then(() =>
             moveServo("in", 1100, 1700)
-        )
+        )*/
 }
