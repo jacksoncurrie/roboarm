@@ -13,21 +13,19 @@ var moveServo = (servo, position, final, callback) => {
     if(position != final) {
        
         // Which way to move
-        position += (position < final) ? 1 : -1;
+        position += (position < final) ? 10 : -10;
 
         // Send to servo
         socket.emit(servo, position);
     
         // Run function again
         setTimeout(() => 
-            moveServo(servo, position, final),
-            10
+            moveServo(servo, position, final, callback),
+            20
         );
-    }
-
-    // Next function
-    if(callback != undefined)
+    } else {
         callback();
+    }
 }
 
 // Start automation of arm
@@ -44,7 +42,7 @@ var automate = (position) => {
                     moveServo("up", 900, 1500, () =>
                         moveServo("forward", 1500, 1250, () =>
                             moveServo("rotate", rotateTo, 1450, () =>
-                                moveServo("in", 1100, 1700 )
+                                moveServo("in", 1100, 1700, () =>{})
                             )
                         )
                     )
