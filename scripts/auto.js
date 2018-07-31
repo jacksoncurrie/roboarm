@@ -7,8 +7,7 @@
 // Socket
 var socket = io();
 
-var moveServo = (servo, position, final) => {
-
+var continueServo = (servo, position, final) => {
     // While not complete
     if(position != final) {
 
@@ -20,10 +19,15 @@ var moveServo = (servo, position, final) => {
 
         // Run function again
         setTimeout(() =>
-            moveServo(servo, position, final),
+            continueServo(servo, position, final),
             10
         );
     }
+}
+
+var moveServo = (servo, position, final) => {
+    // While not complete
+    continueServo(servo, position, final);
 }
 
 // Start automation of arm
@@ -31,8 +35,8 @@ var automate = async (position) => {
 
     // Which way to rotate
     rotateTo = (position == "right") ? 2360 : 540;
-
-    // Moves the servo
+    
+    // Moves the servos
     await moveServo("rotate", 1450, rotateTo);
     await moveServo("up", 1500, 900);
     await moveServo("forward", 1250, 1500);
