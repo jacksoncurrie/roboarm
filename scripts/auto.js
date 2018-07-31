@@ -7,22 +7,23 @@
 // Socket
 var socket = io();
 
-var continueServo = (servo, position, final) => {
-   
-}
-
 var moveServo = (servo, position, final) => {
-     // While not complete
-    while(position != final) {
-        // Run function again
-        setTimeout(() => {
-            // Which way to move
-            position += (position < final) ? 1 : -1;
+   
+    // While not complete
+    if(position != final) {
+       
+        // Which way to move
+        position += (position < final) ? 1 : -1;
 
-            // Send to servo
-            socket.emit(servo, position);
-        }, 10);
-    }
+         // Send to servo
+         socket.emit(servo, position);
+       
+         // Run function again
+         setTimeout(() => 
+             moveServo(servo, position, final),
+             10
+         );
+     }
 }
 
 // Start automation of arm
