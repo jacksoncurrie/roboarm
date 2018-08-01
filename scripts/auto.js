@@ -13,7 +13,7 @@ var moveServo = (servo, position, final, callback) => {
     if(position != final) {
        
         // Which way to move
-        position += (position < final) ? 1 : -1;
+        position += (position < final) ? 5 : -5;
 
         // Send to servo
         socket.emit(servo, position);
@@ -21,7 +21,7 @@ var moveServo = (servo, position, final, callback) => {
         // Run function again
         setTimeout(() => 
             moveServo(servo, position, final, callback),
-            2
+            10
         );
     } else {
         callback();
