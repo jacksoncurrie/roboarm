@@ -32,18 +32,18 @@ var moveServo = (servo, position, final, callback) => {
 var automate = () => {
     
     // Moves the servos
-    moveServo("rotate", 1450, 2360,
-    moveServo("up", 1500, 1300,
-    moveServo("forward", 1250, 1700,
-    moveServo("in", 1700, 1100,
-    moveServo("up", 1300, 1500,
-    moveServo("forward", 1700, 1250,
-    moveServo("rotate", 2360, 540,
-    moveServo("up", 1500, 1300,
-    moveServo("forward", 1250, 1700,
-    moveServo("in", 1100, 1700,
-    moveServo("up", 1300, 1500,
-    moveServo("forward", 1700, 1250,
+    moveServo("rotate", 1450, 2360, () =>
+    moveServo("up", 1500, 1300, () =>
+    moveServo("forward", 1250, 1700, () =>
+    moveServo("in", 1700, 1100, () =>
+    moveServo("up", 1300, 1500, () =>
+    moveServo("forward", 1700, 1250, () =>
+    moveServo("rotate", 2360, 540, () =>
+    moveServo("up", 1500, 1300, () =>
+    moveServo("forward", 1250, 1700, () =>
+    moveServo("in", 1100, 1700, () =>
+    moveServo("up", 1300, 1500, () =>
+    moveServo("forward", 1700, 1250, () =>
     moveServo("rotate", 2360, 1450, () => {}
     )))))))))))));
 }
