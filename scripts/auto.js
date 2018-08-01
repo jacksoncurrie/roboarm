@@ -44,6 +44,6 @@ var automate = () => {
     moveServo("in", 1100, 1700, () =>
     moveServo("up", 1300, 1500, () =>
     moveServo("forward", 1700, 1250, () =>
-    moveServo("rotate", 2360, 1450, () => {}
+    moveServo("rotate", 540, 1450, () => {}
     )))))))))))));
 }
