@@ -6,7 +6,6 @@
 
 // Socket
 var socket = io();
-var abort = false;
 
 var moveServo = (servo, position, final, callback) => {
    
@@ -58,11 +57,7 @@ var automate = () => {
     moveServo("in", 1100, 1700, () =>
     moveServo("forward", 1700, 1250, () =>
     moveServo("up", 1300, 1500, () =>
-    moveServo("rotate", 2360, 540, () =>
+    moveServo("rotate", 2360, 1450, () =>
     automate()
     ))))))))))))))))))))))))));
-
-    // When stop clicked
-    if(abort)
-        return;
 }
