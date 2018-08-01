@@ -1,0 +1,32 @@
+#!/bin/bash
+# All commands for uninstalling Roboarm
+
+echo "==============================="
+echo "      Stopping service"
+echo "==============================="
+
+sudo service myService stop
+
+echo "==============================="
+echo "      Deleting service"
+echo "==============================="
+
+sudo forever-service delete myService
+
+echo "==============================="
+echo "   Adding service to boot"
+echo "==============================="
+
+sudo echo "#!/bin/sh" > /etc/rc.local
+sudo echo "exit 0" >> /etc/rc.local
+
+echo "==============================="
+echo "      Deleting project"
+echo "==============================="
+
+cd ..
+sudo rm -rf roboarm
+
+echo "==============================="
+echo "     Uninstall Complete"
+echo "==============================="
