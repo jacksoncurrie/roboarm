@@ -59,9 +59,7 @@ app.get('/about', (req, res) => {
 });
 
 // Start server on port 8080
-var server = app.listen(8080, () =>
-  console.log("Listening on port 8080")
-);
+var server = app.listen(8080);
 
 io.attach(server);
 

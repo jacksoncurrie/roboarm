@@ -37,10 +37,10 @@ var automate = (position) => {
     // Moves the servos
     moveServo("rotate", 1450, rotateTo, () =>
         moveServo("up", 1500, 900, () =>
-            moveServo("forward", 1250, 1500, () =>
+            moveServo("forward", 1250, 1600, () =>
                 moveServo("in", 1700, 1100, () =>
                     moveServo("up", 900, 1500, () =>
-                        moveServo("forward", 1500, 1250, () =>
+                        moveServo("forward", 1600, 1250, () =>
                             moveServo("rotate", rotateTo, 1450, () =>
                                 moveServo("in", 1100, 1700, () =>{})
                             )
