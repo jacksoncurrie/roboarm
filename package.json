@@ -1,14 +1,14 @@
 {
   "name": "roboarm",
   "version": "1.0.0",
-  "description": "Controlling a robot with a Raspberry Pi",
+  "description": "Web server to control robotic arm",
   "main": "app.js",
   "scripts": {
     "start": "sudo node app.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://jacksoncurrie@bitbucket.org/jacksoncurrie/roboarm.git"
+    "url": "git+https://github.com/jacksoncurrie/roboarm.git"
   },
   "keywords": [
     "robot",
@@ -18,7 +18,10 @@
   ],
   "author": "Jackson Currie",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/jacksoncurrie/roboarm#readme",
+  "bugs": {
+    "url": "https://github.com/jacksoncurrie/roboarm/issues"
+  },
+  "homepage": "https://github.com/jacksoncurrie/roboarm#readme",
   "dependencies": {
     "ejs": "^2.6.1",
     "express": "^4.16.3",
