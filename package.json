@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/jacksoncurrie/roboarm#readme",
   "dependencies": {
-    "ejs": "^2.6.1",
+    "ejs": "^3.1.7",
     "express": "^4.16.3",
     "forever": "^0.15.3",
     "forever-service": "^0.5.11",
